@@ -7,8 +7,6 @@ const config = {
   password: process.env.DB_PASS,
 };
 
-module.exports = config;
-
 const mysql = require('mysql');
 const db = mysql.createConnection(config);
 
@@ -16,3 +14,5 @@ db.connect(function(err) {
     if(err) throw err;
     console.log('DB connected!');
 });
+
+module.exports = db;
