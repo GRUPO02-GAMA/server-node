@@ -39,3 +39,5 @@ function cadastrar() {
 
   return record;
 }
+
+module.exports = cadastrar();
