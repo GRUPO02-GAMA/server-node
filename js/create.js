@@ -5,9 +5,9 @@ const connection = mysql.createConnection(config);
 
 const person = cadastrar();
 
-const sql = `insert into agenda values ('${person.name}','${person.email}','${person.age}', '${person.gender})`;
+const sql = `insert into agenda values ('?','?','?','?')`;
 
-const data = [];
+const data = [`${person.name}`, `${person.email}`, `${person.age}`, `${person.gender}`];
 
 connection.query(sql, data, (err, result, fields) => {
   if (err) throw err;
@@ -37,6 +37,7 @@ function cadastrar() {
     gender: gender
   }
 
-  data.push(record);
   return record;
 }
+
+module.exports = cadastrar();
