@@ -1,11 +1,12 @@
 const http = require("http");
 const fs = require("fs");
-const contents = fs.readFileSync("../index.html");
+const contents = fs.readFileSync("html/index.html");
+require('dotenv').config();
 
 http
   .createServer((req, res) => {
     res.end(contents);
   })
-  .listen(8080);
+  .listen(process.env.APP_PORT);
 
-console.log("Serviço disponível em: http://localhost:8080");
+console.log(`Serviço disponível em: http://localhost:${process.env.APP_PORT}`);
