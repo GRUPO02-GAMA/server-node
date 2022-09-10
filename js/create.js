@@ -20,16 +20,11 @@ connection.query(sql, data, (err, result, fields) => {
 connection.end();
 
 function cadastrar() {
-/*   let nome = document.getElementById('nome');
-  let email = document.getElementById('email');
-  let idade = document.getElementById('idade');
-  let genero = document.getElementById('genero'); */
+  let name = document.getElementById('nome').value;
+  let email = document.getElementById('email').value;
+  let age = document.getElementById('idade').value;
+  let gender = document.getElementById('genero').value;
   
-  let name = 'Jay';
-  let email = 'jay@email.com';
-  let age = 23;
-  let gender = 'M';
-
   const record = {
     name: name,
     email: email,
