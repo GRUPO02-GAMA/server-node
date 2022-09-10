@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-const config = require("../database/config");
+const config = require("../database/data");
 
 const connection = mysql.createConnection(config);
 
@@ -35,4 +35,4 @@ function cadastrar() {
   return record;
 }
 
-module.exports = cadastrar();
+module.exports = cadastrar;

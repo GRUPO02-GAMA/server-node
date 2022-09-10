@@ -1,18 +1,13 @@
 const mysql = require("mysql");
-const config = require("../database/config");
+const config = require("../database/data");
 
 const connection = mysql.createConnection(config);
 
-const sql = ``;
+const sql = `select * from agenda`;
 
-const data = [];
-
-connection.query(sql, data, (err, result, fields) => {
+connection.query(sql, (err, result, fields) => {
   if (err) throw err;
-  console.log(
-    "Sucesso. Rows affected:",
-    result.affectedRows
-  );
+  console.log(result)
 });
 
 connection.end();
